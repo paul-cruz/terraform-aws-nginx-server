@@ -30,13 +30,16 @@ locals {
 2. Use the [simple example](example/main.tf)
 
 ```hcl
-module "network" {
-  source            = "<PATH-TO-THE-MODULE>"
-  vpc_name          = "<VPC-NAME>"
-  vpc_cidr          = "<VPC-CIDR>"
-  vpc_az            = "<VPC-AVAILABILITY-ZONE>"
-  vpc_public_subnet = "<CIDR-FOR-THE-PUBLIC-SUBNET>"
-  local_machine_ip  = "<YOUR-PUBLIC-IP-TO-SSH>"
+module "nginx_server" {
+  source            = "paul-cruz/nginx-server/aws"
+  vpc_name          = local.vpc_name
+  vpc_cidr          = local.vpc_cidr
+  vpc_az            = local.vpc_az
+  vpc_public_subnet = local.vpc_public_subnet
+  local_machine_ip  = local.local_machine_ip
+  ssh_key           = local.ssh_key
+  instance_type     = local.instance_type
+  server_name       = local.server_name
 }
 ```
 
