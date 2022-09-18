@@ -8,7 +8,7 @@ This module creates an EC2 instance with the needed configuration to have a ngin
 
 ## Architecture
 
-![Arq,use](assets/architecture-diagram.png)
+![Arq,use](https://raw.githubusercontent.com/paul-cruz/terraform-aws-nginx-server/main/assets/architecture-diagram.png)
 
 ### Example of use
 
